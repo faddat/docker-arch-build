@@ -3,7 +3,7 @@ FROM lopsided/archlinux
 MAINTAINER Jacob Gadikian <jacob.gadikian@tendermint.com>
 
 RUN pacman --sync --refresh --sysupgrade --noconfirm --noprogressbar --quiet && \
-  pacman --sync --noconfirm --noprogressbar --quiet git namcap base-devel
+  pacman -Syyu --noconfirm git namcap base-devel
 
 RUN useradd --create-home --comment "Arch Build User" build
 ENV HOME /home/build
